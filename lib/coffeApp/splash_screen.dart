@@ -1,5 +1,6 @@
-import 'package:creativa_day_2/coffeApp/order_screen.dart';
+import 'package:creativa_day_2/coffeApp/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Splash extends StatelessWidget {
   const Splash({super.key});
@@ -49,10 +50,12 @@ class Splash extends StatelessWidget {
 
               ),
               child: InkWell(
-                onTap: () {
-                  Navigator.push(
+                onTap: () async {
+                  final prefs = await SharedPreferences.getInstance();
+                  await prefs.setBool('repeat', true);
+                  Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => OrderScreen()),
+                    MaterialPageRoute(builder: (context) => HomeScreen()),
                     );
                   
                 },

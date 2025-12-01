@@ -1,15 +1,18 @@
-import 'package:creativa_day_2/coffeApp/details_screen.dart';
-import 'package:creativa_day_2/coffeApp/order_screen.dart';
-import 'package:creativa_day_2/starting/myHomePage.dart';
+import 'package:creativa_day_2/coffeApp/home_screen.dart';
 import 'package:creativa_day_2/coffeApp/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  bool? repeat = prefs.getBool('repeat');
+  runApp(MyApp(repeat: repeat));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final bool? repeat;
+  const MyApp({super.key, this.repeat});
 
   // This widget is the root of your application.
   @override
@@ -21,8 +24,7 @@ class MyApp extends StatelessWidget {
       
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-     // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-     home: DetailsScreen(),
+     home: (repeat == true) ? HomeScreen() : Splash(),
     );
   }
 }
