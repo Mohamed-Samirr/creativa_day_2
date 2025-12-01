@@ -1,6 +1,6 @@
-import 'package:creativa_day_2/home_screen.dart';
-import 'package:creativa_day_2/myHomePage.dart';
-import 'package:creativa_day_2/splash_screen.dart';
+import 'package:creativa_day_2/coffeApp/home_screen.dart';
+import 'package:creativa_day_2/starting/myHomePage.dart';
+import 'package:creativa_day_2/coffeApp/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
