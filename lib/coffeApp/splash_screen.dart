@@ -1,4 +1,4 @@
-import 'package:creativa_day_2/coffeApp/home_screen.dart';
+import 'package:creativa_day_2/coffeApp/order_screen.dart';
 import 'package:flutter/material.dart';
 
 class Splash extends StatelessWidget {
@@ -52,7 +52,7 @@ class Splash extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()),
+                    MaterialPageRoute(builder: (context) => OrderScreen()),
                     );
                   
                 },
