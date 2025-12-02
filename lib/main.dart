@@ -1,5 +1,6 @@
 import 'package:creativa_day_2/coffeApp/home_screen.dart';
 import 'package:creativa_day_2/coffeApp/splash_screen.dart';
+import 'package:creativa_day_2/weatherApp/features/home/view/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-     home: (repeat == true) ? HomeScreen() : Splash(),
+     home:HomeScreenWeather(),
     );
   }
 }
