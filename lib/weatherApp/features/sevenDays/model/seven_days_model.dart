@@ -15,6 +15,12 @@ class SevenDaysModel {
     required this.lowTemp,
   });
 
+  String get dayName {
+    DateTime date = DateTime.parse(day);
+    List<String> days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+    return days[date.weekday - 1];
+  }
+
   factory SevenDaysModel.fromJson(Map<String, dynamic> json, int index) {
     return SevenDaysModel(
       day: json['time'][index],
